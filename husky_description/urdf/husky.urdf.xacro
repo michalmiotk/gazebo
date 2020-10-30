@@ -38,7 +38,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <xacro:property name="husky_rear_bumper_extend" value="$(optenv HUSKY_REAR_BUMPER_EXTEND 0)" />
 
   <xacro:arg name="robot_namespace" default="/" />
-  <xacro:arg name="urdf_extras" default="empty.urdf" />
 
   <!-- Included URDF/XACRO Files -->
   <xacro:include filename="$(find husky_description)/urdf/decorations.urdf.xacro" />
@@ -151,7 +150,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz=".2 0 0.4" rpy="0 0 0"/>
+    <origin xyz=".2 0 0.8" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="camera"/>
   </joint>
@@ -268,14 +267,11 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     </sensor>
   </gazebo>
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <xacro:VLP-16 parent="base_link" name="vlp201" topic="/vlp_1/velodyne_points" hz="20" samples="1845" gpu="true">
+  <xacro:VLP-16 parent="base_link" name="vlp201" topic="/vlp_1/velodyne_points" hz="40" samples="180" gpu="false">
     <origin xyz="0 0 0.35" rpy="0 0 0" />
   </xacro:VLP-16>
   
-  <xacro:VLP-16 parent="base_link" name="vlp202" topic="/vlp_2/velodyne_points" hz="20" samples="1845" gpu="true">
+  <xacro:VLP-16 parent="base_link" name="vlp202" topic="/vlp_2/velodyne_points" hz="40" samples="180" gpu="false">
     <origin xyz="0 -0.15 0.3" rpy="-1.57 3.14 3.14" />
   </xacro:VLP-16>
-  <!-- Optional custom includes. -->
-  <xacro:include filename="$(arg urdf_extras)" />
-
 </robot>
