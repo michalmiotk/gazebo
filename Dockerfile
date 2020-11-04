@@ -2,6 +2,8 @@ FROM ros:noetic-perception
 RUN mkdir -p /home/catkin_ws/
 RUN apt update && apt install -y gazebo11 git
 RUN git clone https://github.com/michalmiotk/gazebo /home/catkin_ws/src
+RUN git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo /home/catkin_ws/src/hector_gazebo
+RUN rm -r /home/catkin_ws/src/hector_gazebo/hector_gazebo_thermal_camera
 RUN git clone https://github.com/clearpathrobotics/lms1xx /home/catkin_ws/src/LMS1xx
 RUN git clone https://github.com/ros-visualization/interactive_marker_twist_server /home/catkin_ws/src/interactive_marker_twist_server
 RUN apt install -y ros-noetic-gazebo-ros-control
