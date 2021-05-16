@@ -1,0 +1,12 @@
+[submodule "lms1xx"]
+	path = lms1xx
+	url = https://github.com/clearpathrobotics/lms1xx.git
+[submodule "hector_gazebo"]
+	path = hector_gazebo
+	url = https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
+[submodule "interactive_marker_twist_server"]
+	path = interactive_marker_twist_server
+	url = https://github.com/ros-visualization/interactive_marker_twist_server
+[submodule "robot_state_publisher"]
+	path = robot_state_publisher
+	url  = https://github.com/ros/robot_state_publisher.git
