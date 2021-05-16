@@ -267,11 +267,11 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     </sensor>
   </gazebo>
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <xacro:VLP-16 parent="base_link" name="vlp201" topic="/vlp_1/velodyne_points" hz="10" samples="1" gpu="false">
+  <xacro:VLP-16 parent="base_link" name="vlp201" topic="/vlp_1/velodyne_points" hz="10" samples="100" gpu="false">
     <origin xyz="0 0 0.35" rpy="0 0 0" />
   </xacro:VLP-16>
   
-  <xacro:VLP-16 parent="base_link" name="vlp202" topic="/vlp_2/velodyne_points" hz="10" samples="1" gpu="false">
+  <xacro:VLP-16 parent="base_link" name="vlp202" topic="/vlp_2/velodyne_points" hz="10" samples="100" gpu="false">
     <origin xyz="0 -0.15 0.3" rpy="-1.57 3.14 3.14" />
   </xacro:VLP-16>
 </robot>
